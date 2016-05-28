@@ -20,7 +20,7 @@ public class LinkedList<T> {
             focus = head;
         }
         while(focus.next != null){
-            focus2 = focus.next;
+            focus = focus.next;
         }
         focus.next = new Node<>(element);
     }
