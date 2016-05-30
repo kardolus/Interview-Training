@@ -36,4 +36,9 @@ public class Client { // would normally write a test class instead. Here for cla
         invoker.setCommand(() -> receiverA.doOperation());
         invoker.invokeCommand();
     }
+
+    public void invokeMethodReferenceCommand(){
+        invoker.setCommand(receiverB::doAction);
+        invoker.invokeCommand();
+    }
 }

@@ -48,4 +48,10 @@ public class ClientTest {
         client.invokeLambdaCommand();
         assertEquals(outContent.toString(), "Operation A\n");
     }
+
+    @Test
+    public void invokeMethodReferenceCommand() throws Exception {
+        client.invokeMethodReferenceCommand();
+        assertEquals(outContent.toString(), "Action B\n");
+    }
 }
