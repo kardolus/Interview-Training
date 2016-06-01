@@ -94,6 +94,14 @@ public class BinaryTree {
         }
     }
 
+    // TODO
+    // Remove a node by rotating the tree:
+    // If leftchild and rightchild are null: remove the node
+    // If only the leftChild is null: swap the node with the right child
+    // if only the rightChild is null: swap with left child
+    // if no children are null: swap with any child.
+    // repeat until the node to remove has no children left.
+
     public int size() {
         return size;
     }
