@@ -56,7 +56,7 @@ public class MaxHeap implements Heap {
         }
     }
 
-    private void bubbleDown(int index){
+    private void bubbleDown(int index){ // TODO implement bubble down
         Integer focus = swapDown(index);
         if(hasChild(index) && focus != null){
             bubbleDown(focus);
@@ -77,21 +77,7 @@ public class MaxHeap implements Heap {
     }
 
     private Integer swapDown(int index) {
-        int tmp;
-        if(array[index] < array[getIndexLeftChild(index)] ||
-                (getIndexRightChild(index) < size() && array[index] < array[getIndexRightChild(index)])){
-            if(getIndexRightChild(index) >= size() || array[getIndexLeftChild(index)] > array[getIndexRightChild(index)]) {
-                tmp = array[getIndexLeftChild(index)];
-                array[getIndexLeftChild(index)] = array[index];
-                array[index] = tmp;
-                return getIndexLeftChild(index);
-            }else{
-                tmp = array[getIndexRightChild(index)];
-                array[getIndexRightChild(index)] = array[index];
-                array[index] = tmp;
-                return getIndexRightChild(index);
-            }
-        }
+        // TODO implement
         return null;
     }
 
