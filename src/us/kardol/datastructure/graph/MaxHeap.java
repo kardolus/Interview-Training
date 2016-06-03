@@ -64,7 +64,7 @@ public class MaxHeap implements Heap {
     }
 
     private boolean hasChild(int index) {
-        return size() - 4 > getIndexLeftChild(index);
+        return size() > getIndexLeftChild(index);
     }
 
     private void swap(int index) {
