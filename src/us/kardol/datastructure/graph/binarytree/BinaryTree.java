@@ -1,4 +1,4 @@
-package us.kardol.datastructure.graph;
+package us.kardol.datastructure.graph.binarytree;
 
 import java.util.LinkedList;
 

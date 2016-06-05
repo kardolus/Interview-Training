@@ -2,6 +2,7 @@ package us.kardol.datastructure.graph;
 
 import org.junit.Before;
 import org.junit.Test;
+import us.kardol.datastructure.graph.binarytree.BinaryTree;
 
 import static org.junit.Assert.*;
 

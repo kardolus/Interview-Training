@@ -1,4 +1,4 @@
-package us.kardol.datastructure.graph;
+package us.kardol.datastructure.graph.heap;
 
 public interface Heap {
     boolean isEmpty();

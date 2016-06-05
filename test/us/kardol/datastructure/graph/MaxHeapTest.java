@@ -2,6 +2,8 @@ package us.kardol.datastructure.graph;
 
 import org.junit.Before;
 import org.junit.Test;
+import us.kardol.datastructure.graph.heap.Heap;
+import us.kardol.datastructure.graph.heap.MaxHeap;
 
 import static org.junit.Assert.*;
 
