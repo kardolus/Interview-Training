@@ -1,7 +1,5 @@
 package us.kardol.datastructure.graph.trie;
 
-import java.util.*;
-
 public class Trie {
     Node focus;
     Node[] rootNodes = new Node[26];
