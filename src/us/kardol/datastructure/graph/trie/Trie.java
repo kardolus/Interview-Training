@@ -63,7 +63,7 @@ public class Trie {
 
         for(int i = 1; i < charArray.length; i++){
             index = charToIndex(charArray[i]);
-            focus = focus.nodeArray[index] == null ? focus : focus.nodeArray[index];
+            focus = focus.nodeArray[index];
         }
 
         return focus;
