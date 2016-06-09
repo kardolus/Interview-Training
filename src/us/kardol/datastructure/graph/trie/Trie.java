@@ -33,7 +33,7 @@ public class Trie {
         newNode = new Node(charArray[i]);
         focus.nodeArray[charToIndex(charArray[i])] = newNode;
 
-        while(i < charArray.length){
+        while(i < charArray.length){ // add the rest
             newNode = new Node(charArray[i]);
             index = charToIndex(charArray[i]);
             focus.nodeArray[index] = newNode;
