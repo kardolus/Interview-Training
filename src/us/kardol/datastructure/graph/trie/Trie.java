@@ -25,12 +25,12 @@ public class Trie {
 
         focus = rootNodes[index];
 
-        while (focus.nodeArray[charToIndex(charArray[i])] != null){
+        while (focus.nodeArray[charToIndex(charArray[i])] != null){ // traverse to insertion point
             focus = focus.nodeArray[charToIndex(charArray[i])];
             i++;
         }
 
-        while(i < charArray.length){ // add the rest
+        while(i < charArray.length){ // add all the remaining nodes
             newNode = new Node(charArray[i]);
             index = charToIndex(charArray[i]);
             focus.nodeArray[index] = newNode;
