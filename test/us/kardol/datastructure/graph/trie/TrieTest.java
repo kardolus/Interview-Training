@@ -28,8 +28,10 @@ public class TrieTest {
     public void testAddMany(){
         trie.add("apple");
         trie.add("ape");
+        trie.add("appman");
         assertEquals(trie.complete("ap").toString(), "ape");
         assertEquals(trie.complete("a").toString(), "ape");
         assertEquals(trie.complete("app").toString(), "apple");
+        assertEquals(trie.complete("appm").toString(), "appman");
     }
 }

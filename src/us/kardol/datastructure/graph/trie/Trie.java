@@ -14,9 +14,9 @@ public class Trie {
     }
 
     public void add(String word) {
-        int index = charToIndex(word.charAt(0));
-        Node newNode;
         int i = 1;
+        Node newNode;
+        int index = charToIndex(word.charAt(0));
         char[] charArray = word.toCharArray();
 
         if(rootNodes[index] == null){
@@ -29,9 +29,6 @@ public class Trie {
             focus = focus.nodeArray[charToIndex(charArray[i])];
             i++;
         }
-
-        newNode = new Node(charArray[i]);
-        focus.nodeArray[charToIndex(charArray[i])] = newNode;
 
         while(i < charArray.length){ // add the rest
             newNode = new Node(charArray[i]);
