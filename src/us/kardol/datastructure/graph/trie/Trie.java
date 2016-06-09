@@ -15,25 +15,36 @@ public class Trie {
 
     public void add(String word) {
         int index = charToIndex(word.charAt(0));
+        Node newNode;
+        int i = 1;
+        char[] charArray = word.toCharArray();
+
         if(rootNodes[index] == null){
             rootNodes[index] = new Node(word.charAt(0));
         }
 
         focus = rootNodes[index];
-        char[] charArray = word.toCharArray();
 
-        for(int i = 1; i < charArray.length; i++){
-            Node newNode = new Node(charArray[i]);
+        while (focus.nodeArray[charToIndex(charArray[i])] != null){
+            focus = focus.nodeArray[charToIndex(charArray[i])];
+            i++;
+        }
+
+        newNode = new Node(charArray[i]);
+        focus.nodeArray[charToIndex(charArray[i])] = newNode;
+
+        while(i < charArray.length){
+            newNode = new Node(charArray[i]);
             index = charToIndex(charArray[i]);
             focus.nodeArray[index] = newNode;
             focus = focus.nodeArray[index];
+            i++;
         }
     }
 
     public String complete(String word) {
-        int index = charToIndex(word.charAt(0));
-        focus = rootNodes[index];
-        String result = focus.toString();
+        focus = traverseToFocus(word);
+        String result = word;
 
         for(int i = 0; i < focus.nodeArray.length; i++) {
             if(focus.nodeArray[i] != null){
@@ -43,6 +54,19 @@ public class Trie {
             }
         }
         return result;
+    }
+
+    private Node traverseToFocus(String word){
+        char[] charArray = word.toCharArray();
+        int index = charToIndex(charArray[0]);
+        focus = rootNodes[index];
+
+        for(int i = 1; i < charArray.length; i++){
+            index = charToIndex(charArray[i]);
+            focus = focus.nodeArray[index] == null ? focus : focus.nodeArray[index];
+        }
+
+        return focus;
     }
 
     private int charToIndex(char c){

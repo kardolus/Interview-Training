@@ -30,5 +30,6 @@ public class TrieTest {
         trie.add("ape");
         assertEquals(trie.complete("ap").toString(), "ape");
         assertEquals(trie.complete("a").toString(), "ape");
+        assertEquals(trie.complete("app").toString(), "apple");
     }
 }
