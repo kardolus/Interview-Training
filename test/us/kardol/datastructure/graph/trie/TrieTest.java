@@ -26,12 +26,23 @@ public class TrieTest {
 
     @Test
     public void testAddMany(){
-        trie.add("apple");
-        trie.add("ape");
-        trie.add("appman");
+        addMany();
         assertEquals(trie.complete("ap").toString(), "ape");
         assertEquals(trie.complete("a").toString(), "ape");
         assertEquals(trie.complete("app").toString(), "apple");
         assertEquals(trie.complete("appm").toString(), "appman");
+    }
+
+    @Test
+    public void testContains(){
+        addMany();
+        assertTrue(trie.contains("ape"));
+        assertFalse(trie.contains("batman"));
+    }
+
+    private void addMany(){
+        trie.add("apple");
+        trie.add("ape");
+        trie.add("appman");
     }
 }
