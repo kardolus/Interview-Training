@@ -53,6 +53,21 @@ public class Trie {
         return result;
     }
 
+    public boolean contains(String word) {
+        char[] charArray = word.toCharArray();
+        int index = charToIndex(charArray[0]);
+        focus = rootNodes[index];
+
+        for(int i = 1; i < charArray.length; i++){
+            index = charToIndex(charArray[i]);
+            if(focus == null){
+                return false;
+            }
+            focus = focus.nodeArray[index];
+        }
+        return true;
+    }
+
     private Node traverseToFocus(String word){
         char[] charArray = word.toCharArray();
         int index = charToIndex(charArray[0]);
@@ -68,21 +83,6 @@ public class Trie {
 
     private int charToIndex(char c){
         return c - 97;
-    }
-
-    public boolean contains(String word) {
-        char[] charArray = word.toCharArray();
-        int index = charToIndex(charArray[0]);
-        focus = rootNodes[index];
-
-        for(int i = 1; i < charArray.length; i++){
-            index = charToIndex(charArray[i]);
-            if(focus == null){
-                return false;
-            }
-            focus = focus.nodeArray[index];
-        }
-        return true;
     }
 }
 
