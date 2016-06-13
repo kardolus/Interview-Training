@@ -2,6 +2,7 @@ package us.kardol.designpattern.adapter;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
@@ -12,12 +13,13 @@ public class AdapterTest {
     @Mock
     private Adaptee adaptee;
 
+    @InjectMocks
     private Adapter adapter;
 
     @Before
     public void setUp(){
         MockitoAnnotations.initMocks(this);
-        adapter = new Adapter(adaptee);
+//        adapter = new Adapter(adaptee);
     }
 
     @Test
